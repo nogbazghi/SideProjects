@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/style.css">
+      <script src="localforage/dist/localforage.js"></script>
+      <!-- <script>localforage.getItem('something', myCallback);</script> -->
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script type ="text/javascript" src= "/script.js"></script>
+      <title>My Player</title>
+
+      <!-- TODO add manifest here -->
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <!-- Add to home screen for Safari on iOS -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="Weather PWA">
+      <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">My Player</h1>
+    </header>
+    <main class="main">
+      <div id = "names" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+       <input class="mdl-textfield__input" type="text" id="players" value="Pick a player" readonly tabIndex="-1">
+       <label for="players">
+           <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+       </label>
+       <label for="players" class="mdl-textfield__label">Players</label>
+       <ul for="players" class="mdl-menu mdl-menu--bottom-left mdl-js-menu"></ul>
+      </div>
+      <div id = "Plist">
+        <h2>Players</h2>
+      </div>
+      <dialog class="mdl-dialog" id="modal-example">
+        <div class ="mdl-dialog__title">
+
+        </div>
+        <div class="mdl-dialog__content">
+          <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+            <!-- Tab Bars -->
+            <div class="mdl-tabs__tab-bar">
+                <a href="#avg-panel" class="mdl-tabs__tab is-active">Career Averages</a>
+                <a href="#gl-panel" class="mdl-tabs__tab">Game Log</a>
+            </div>
+            <div class="mdl-tabs__panel is-active" id="avg-panel">
+              <table class="mdl-data-table mdl-js-data-table" >
+                <thead id ="avgTableHead"></thead>
+                <tbody id ="avgTableBody"></tbody>
+              </table>
+            </div>
+            <!-- MDL Tab panel 2 -->
+            <div class="mdl-tabs__panel" id="gl-panel">
+              <table class="mdl-data-table mdl-js-data-table" id ="glTable">
+                <thead id ="glTableHead"></thead>
+                <tbody id ="glTableBody"></tbody>
+              </table></div>
+          </div>
+        </div>
+        <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+          <button type="button" class="mdl-button">Close</button>
+        </div>
+      </dialog>
+    </main>
+  </body>
+</html>
